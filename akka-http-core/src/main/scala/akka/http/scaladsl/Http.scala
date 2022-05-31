@@ -58,8 +58,11 @@ import scala.concurrent.duration._
 class HttpExt @InternalStableApi /* constructor signature is hardcoded in Telemetry */ private[http] (private val config: Config)(implicit val system: ExtendedActorSystem) extends akka.actor.Extension
   with DefaultSSLContextCreation {
 
-  akka.http.Version.check(system.settings.config)
-  akka.AkkaVersion.require("akka-http", akka.http.Version.supportedAkkaVersion)
+  //akka.http.
+
+  //akka.http.Version.check(system.settings.config)
+  akka.AkkaVersion.require("akka-http", "2.5.4"//akka.http.Version.supportedAkkaVersion
+  )
 
   // Used for ManifestInfo.checkSameVersion
   private def allModules: List[String] = List(
